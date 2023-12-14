@@ -28,7 +28,7 @@ def send_mail(to, subject, body):
 
 def get_api_data(endpoint):
     api_url = os.getenv('API_URL') + endpoint
-    req = requests.get(api_url)
+    req = requests.get(api_url,timeout=5)
     return req.json()
 
 def process_event(event, day_limit):
